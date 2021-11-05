@@ -32,3 +32,9 @@ button.addEventListener('click', function () {
     advice.style.fontSize = '42px';
   }
 });
+
+for (let i = 0; i<3; i++) {
+  smoothly(phrase, 'textContent', phrases[i].text);
+  smoothly(image, 'src', phrases[i].image);
+  
+}
