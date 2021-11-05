@@ -1,29 +1,24 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Procrastinate.</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image" href="https://code.s3.yandex.net/web-code/js-favicon.ico">
-</head>
-<body>
-  <div class="header">
-    <p class="logo">Procrastinate.</p>
-    <div class="button">Ещё идея</div>
-  </div>
+let phrases = [
+  'отправить другу смешную гифку',
+  'посмотреть скидки на авиабилеты',
+  'разобраться, о чём поют рэперы',
+  'Юрий Дудь',
+  'расставить книги на полке по цвету',
+  'читать про зарплаты в Сан-Франциско'
+];
 
-  <img class="image" src="https://code.s3.yandex.net/web-code/procrastinate/9.png">
+function getRandomElement(arr) {
+  let randIndex = Math.floor(Math.random() * arr.length);
+  return arr[randIndex];
+}
 
-  <div class="advice">
-    <span>Не писать код, а</span>
-    <span class="phrase">что бы поделать?</span>
-    <img class="cursor" src="https://code.s3.yandex.net/web-code/cursor.gif">
-  </div>
+let button = document.querySelector('.button');
+let phrase = document.querySelector('.phrase');
+let advice = document.querySelector('.advice');
+let image = document.querySelector('.image');
 
-  <p class="footer">© 2020 Сделал Тим Бернерс-Ли</p>
+button.addEventListener('click', function () {
+  let randomElement = getRandomElement(phrases);
+  phrase.textContent = randomElement;
+});
 
-  <script src="script.js"></script>
-</body>
-</html>
